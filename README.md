@@ -85,12 +85,10 @@ Os scripts esperam um banco PostgreSQL local com o schema do MOSAIC-FL
 (`clinical.attendances`, `clinical.patients`, `metrics.clinical_outcomes`,
 `metrics.exam_records`) já carregado.
 
-**Atenção antes de publicar ou compartilhar este repositório**: alguns
+**Atenção**: alguns
 scripts têm a *string* de conexão com uma credencial de desenvolvimento local
 escrita diretamente no código (`postgresql://mosaicfl:...@localhost:5432/mosaicfl`).
-É uma senha de banco local, não uma credencial de produção — mas, ainda
-assim, mova isso para variável de ambiente antes de tornar o repositório
-público.
+É uma senha de banco local, não uma credencial de produção
 
 ## Estrutura
 
