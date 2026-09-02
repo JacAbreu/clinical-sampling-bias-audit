@@ -8,8 +8,8 @@ federado + RAG para predição de trajetória clínica — TCC do MBA em
 Inteligência Artificial e Big Data, ICMC/USP). O código de produção do
 MOSAIC-FL vive em outro repositório — **[JacAbreu/mosaic-fl](https://github.com/JacAbreu/mosaic-fl)**
 —; este aqui é o laboratório onde perguntas sobre a base de dado real
-(repositório FAPESP COVID-19 Data Sharing/BR) foram investigadas antes de
-qualquer decisão de arquitetura ser tomada.
+(**[FAPESP COVID-19 Data Sharing/BR](https://drive.usercontent.google.com/download?id=1CwUMQuS-aBs3as_KMxED2gRWS1MOw-Fp&export=download&authuser=0)**)
+foram investigadas antes de qualquer decisão de arquitetura ser tomada.
 
 Duas perguntas concretas motivaram este trabalho:
 
