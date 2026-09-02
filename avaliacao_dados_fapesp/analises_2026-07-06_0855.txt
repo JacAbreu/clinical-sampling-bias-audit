@@ -1,0 +1,46 @@
+======================================================================
+PARTE 4 — ANÁLISES PARA DESCOBERTA DE CLASSES
+Execução: 2026-07-06_0855
+======================================================================
+
+--- 4a. DURAÇÃO DE INTERNAÇÃO e o corte de 10 dias ---
+  Internados: 138,989
+  Duração — mediana: 17 dias | média: 34 | P75: 38 | P90: 76
+
+  A regra atual usa corte fixo de 10 dias.
+  Como cada corte dividiria os internados (breve% / grave%):
+   corte |  breve% |  grave% | equilíbrio
+  ------------------------------------------
+       5 |   14.4% |   85.6% | 
+       7 |   22.0% |   78.0% | 
+      10 |   33.2% |   66.8% |  <- ATUAL
+      14 |   43.4% |   56.6% | EQUILIBRADO
+      21 |   56.9% |   43.1% | EQUILIBRADO
+      30 |   68.2% |   31.8% | 
+
+  >>> A mediana (17) é o corte que gera divisão mais equilibrada (50/50).
+  >>> Se o objetivo é balancear, considere o corte na mediana, não em 10 fixo.
+
+--- 4b. BALANCEAMENTO ENTRE HOSPITAIS ---
+  ! Só um hospital na amostra — não dá para medir non-IID.
+  ! Para esta análise, garanta que a query traga BPSP e HSL.
+  ! (verifique se o filtro/JOIN não está restringindo a um hospital)
+
+--- 4c. CLASSES ATUAIS vs CLUSTERS DESCOBERTOS ---
+  Distribuição das 5 CLASSES ATUAIS (regra clínica):
+    curado_internado            :   1.2% <- RARA (some sob ruído DP)
+    curado_pronto               :  11.3%
+    melhora_internado_breve     :  21.7%
+    melhora_internado_grave     :  42.6%
+    melhora_pronto              :   0.1% <- RARA (some sob ruído DP)
+    outro                       :  23.1%
+
+  CLUSTERS descobertos (balanceamento):
+    cluster 0:   4.8%
+    cluster 1:   6.2%
+    cluster 2:   0.6%
+    cluster 3:  70.7%
+    cluster 4:  17.7%
+
+  >>> Compare: os clusters são mais equilibrados que as classes atuais?
+  >>> Se sim, e se separarem bem o desfecho (Parte 2), são candidatos melhores.

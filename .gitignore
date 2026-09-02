@@ -1,0 +1,29 @@
+# Ambiente virtual Python
+explorar-dados-env/
+venv/
+.venv/
+
+# Cache de bytecode
+__pycache__/
+*.pyc
+
+# Variáveis de ambiente / credenciais (ver aviso no README)
+.env
+
+# Saídas geradas, grandes e regeneráveis a partir dos scripts
+# (clusters_*.csv chegam a ~20 MB; relatorio*.html a ~5 MB cada — não compensa
+# versionar em Git. Os resumos textuais pequenos, que carregam o achado em si
+# — auditoria_*.txt, analises_*.txt, vies_*.txt —, ficam de fora deste bloco
+# e continuam versionados.)
+clusters_*.csv
+clusters_resultado.csv
+relatorio*.html
+
+# Exceção: versão final da linha V4 (pós-correção do viés de granularidade),
+# mantida como evidência do achado — vale a pena versionar apesar do tamanho.
+!relatorio_agg_V4_2026-07-06_1223.html
+
+# Editor / SO
+.vscode/
+.idea/
+.DS_Store

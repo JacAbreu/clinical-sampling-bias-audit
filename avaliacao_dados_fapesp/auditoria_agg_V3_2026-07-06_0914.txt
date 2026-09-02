@@ -1,0 +1,30 @@
+AUDITORIA (agregada) — 2026-07-06_0914
+
+Atendimentos: 50,632 | Colunas: 19
+
+Cardinalidade:
+  attendance_id         :   50632 distintos  alta cardinalidade
+  patient_id            :   20292 distintos  alta cardinalidade
+  hospital_id           :       1 distintos  INÚTIL (valor único)
+  attendance_type       :       4 distintos  
+  attended_at           :     415 distintos  alta cardinalidade
+  specialty             :       3 distintos  
+  sex                   :       2 distintos  
+  age                   :      91 distintos  
+  state_code            :       5 distintos  
+  municipality          :      15 distintos  
+  outcome_class         :       5 distintos  
+  outcome_at            :     337 distintos  alta cardinalidade
+  n_exames              :     287 distintos  alta cardinalidade
+  n_analitos_dist       :      68 distintos  
+  n_high                :     128 distintos  alta cardinalidade
+  n_low                 :     113 distintos  alta cardinalidade
+  n_normal              :     170 distintos  alta cardinalidade
+  prop_alterados        :     486 distintos  alta cardinalidade
+  duration_days         :     179 distintos  alta cardinalidade
+
+Nulos reais (>0%):
+  municipality          :  23.8%
+
+Ausência disfarçada:
+  age: 73.3% == 0 (idade faltante disfarçada)

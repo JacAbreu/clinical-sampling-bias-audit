@@ -1,0 +1,29 @@
+======================================================================
+PARTE 0 — VIÉS DE GRANULARIDADE e a correção do v4
+======================================================================
+
+Exames por atendimento NESTA AMOSTRA:
+  mínimo: 1 | mediana: 32 | média: 72.1 | máximo: 9241
+
+Como o v4 corrige o viés residual do v3:
+  v3: 'LIMIT' nas linhas de exame -> atendimentos com muitos exames
+      têm mais chance de entrar, e resumos de atendimentos pequenos
+      ficam incompletos (poucas linhas capturadas).
+  v4: sorteia ATENDIMENTOS distintos (chance igual p/ todos) e traz
+      TODOS os exames de cada um -> resumos 100% completos.
+
+  Confirmação nesta amostra: 40,000 atendimentos, cada um com
+  todos os seus exames (nenhum resumo parcial). A chance de entrar na
+  amostra NÃO depende mais do número de exames do atendimento.
+
+Distribuição de 'outcome_class': por EXAME vs por ATENDIMENTO:
+                 por_exame_%  por_atendimento_%  diferença
+  outcome_class                                           
+  0                     12.7               28.9       16.2
+  1                     63.9               21.9      -42.0
+  2                     20.7               48.6       27.9
+  3                      2.6                0.4       -2.2
+  4                      0.1                0.3        0.2
+
+  >>> A coluna 'por_atendimento_%' é a distribuição REAL e sem viés.
+  >>> Diferenças grandes indicam desfechos que geram mais/menos exames.

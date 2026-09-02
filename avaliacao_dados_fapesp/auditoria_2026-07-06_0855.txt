@@ -1,0 +1,41 @@
+AUDITORIA DE QUALIDADE — 2026-07-06_0855
+
+Linhas: 200,000 | Colunas: 26
+
+Cardinalidade e diagnóstico:
+  attendance_id         :   42565 distintos  alta cardinalidade
+  patient_id            :   18416 distintos  alta cardinalidade
+  hospital_id           :       1 distintos  INÚTIL (valor único)
+  attended_at           :     415 distintos  alta cardinalidade
+  attendance_type       :       4 distintos  
+  specialty             :       3 distintos  
+  clinic_id             :       3 distintos  
+  suspected_diagnosis   :       1 distintos  INÚTIL (valor único)
+  confirmed_diagnosis   :       1 distintos  INÚTIL (valor único)
+  patient_id.1          :   18416 distintos  alta cardinalidade
+  sex                   :       2 distintos  
+  age                   :      91 distintos  
+  birth_year            :      91 distintos  
+  state_code            :       5 distintos  
+  hospital_id.1         :       1 distintos  INÚTIL (valor único)
+  municipality          :      15 distintos  
+  cep_prefix            :       8 distintos  
+  id                    :   42565 distintos  alta cardinalidade
+  patient_id.2          :   18416 distintos  alta cardinalidade
+  attendance_id.1       :   42565 distintos  alta cardinalidade
+  outcome_at            :     337 distintos  alta cardinalidade
+  outcome_text          :      18 distintos  
+  outcome_class         :       5 distintos  
+  analyte               :     228 distintos  alta cardinalidade
+  classification        :       3 distintos  
+  duration_days         :     179 distintos  alta cardinalidade
+
+Nulos reais (>0%):
+  suspected_diagnosis   : 100.0%
+  confirmed_diagnosis   : 100.0%
+  cep_prefix            :  99.7%
+  birth_year            :  74.4%
+  municipality          :  31.8%
+
+Ausência disfarçada:
+  age: 74.4% == 0 (idade faltante disfarçada)

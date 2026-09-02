@@ -1,0 +1,42 @@
+======================================================================
+PARTE 4 — ANÁLISES PARA DESCOBERTA DE CLASSES (base agregada)
+Execução: 2026-07-06_0914
+======================================================================
+
+--- 4a. DURAÇÃO e o corte de 10 dias ---
+  Atendimentos internados: 12,537
+  Duração — mediana: 5d | média: 9 | P75: 10 | P90: 20
+
+   corte |  breve% |  grave% | equilíbrio
+  ------------------------------------------
+       5 |   51.6% |   48.4% | EQUILIBRADO
+       7 |   63.4% |   36.6% | 
+      10 |   75.9% |   24.1% |  <- ATUAL
+      14 |   83.9% |   16.1% | 
+      21 |   91.2% |    8.8% | 
+      30 |   95.1% |    4.9% | 
+
+  >>> Agora medido POR ATENDIMENTO (sem o viés de exames repetidos).
+
+--- 4b. BALANCEAMENTO ENTRE HOSPITAIS ---
+  ! Só um hospital na amostra — non-IID não mensurável.
+  ! Verifique se a query traz BPSP e HSL (amostragem estratificada?).
+
+--- 4c. CLASSES ATUAIS vs CLUSTERS ---
+  5 CLASSES ATUAIS (agora por atendimento):
+    curado_internado            :   0.6% <- RARA (some sob ruído DP)
+    curado_pronto               :  28.9%
+    melhora_internado_breve     :  17.5%
+    melhora_internado_grave     :   5.6%
+    melhora_pronto              :   0.2% <- RARA (some sob ruído DP)
+    outro                       :  47.3%
+
+  CLUSTERS descobertos (balanceamento):
+    cluster 0:   0.1%
+    cluster 1:   0.2%
+    cluster 2:   3.7%
+    cluster 3:   9.1%
+    cluster 4:  86.9%
+
+  >>> Os clusters (base agregada) são mais equilibrados e
+  >>> separam melhor o desfecho que as 5 classes teóricas?

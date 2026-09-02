@@ -1,0 +1,23 @@
+======================================================================
+PARTE 0 — DEMONSTRAÇÃO DO VIÉS DE GRANULARIDADE
+======================================================================
+
+Exames por atendimento (fonte do viés de amostragem):
+  mínimo: 1 | mediana: 3 | média: 7.9 | máximo: 1149
+
+Efeito no ORDER BY random() (formato LONGO):
+  Um atendimento com N exames tem N vezes mais chance de ser sorteado.
+  Ex.: os 3 atendimentos com mais exames têm 1149, 1043, 934 exames cada —
+  contra a mediana de 3. No formato longo, pesam desproporcionalmente.
+
+Distribuição de 'outcome_class': LONGO (enviesado) vs AGREGADO:
+                 longo_%  agregado_%  diferença
+  outcome_class                                
+  0                 12.4        29.5       17.1
+  1                 64.3        23.2      -41.1
+  2                 20.5        46.6       26.1
+  3                  2.7         0.4       -2.3
+  4                  0.1         0.3        0.2
+
+  >>> Diferenças não-triviais confirmam que o formato longo
+  >>> distorcia a distribuição real de desfechos por atendimento.
