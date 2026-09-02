@@ -6,9 +6,10 @@ Este diretório reúne os scripts e relatórios de exploração de dado gerados 
 2026-07-06, durante a fase de ajuste do projeto **MOSAIC-FL** (aprendizado
 federado + RAG para predição de trajetória clínica — TCC do MBA em
 Inteligência Artificial e Big Data, ICMC/USP). O código de produção do
-MOSAIC-FL vive em outro repositório; este aqui é o laboratório onde perguntas
-sobre a base de dado real (repositório FAPESP COVID-19 Data Sharing/BR) foram
-investigadas antes de qualquer decisão de arquitetura ser tomada.
+MOSAIC-FL vive em outro repositório — **[JacAbreu/mosaic-fl](https://github.com/JacAbreu/mosaic-fl)**
+—; este aqui é o laboratório onde perguntas sobre a base de dado real
+(repositório FAPESP COVID-19 Data Sharing/BR) foram investigadas antes de
+qualquer decisão de arquitetura ser tomada.
 
 Duas perguntas concretas motivaram este trabalho:
 
